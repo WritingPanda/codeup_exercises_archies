@@ -6,11 +6,10 @@ $c = '10';
 
 if ($a < $b) {
     echo "$a is less than $b\n";
+} else {
+	echo "$b is greater than $a\n";
 }
 
-if ($b > $a) {
-    echo "$b is greater than $a\n";
-}
 
 if ($b >= $c) {
     echo "$b is greater than or equal to $c\n";
