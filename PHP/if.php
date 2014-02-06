@@ -13,25 +13,17 @@ if ($a < $b) {
 
 if ($b >= $c) {
     echo "$b is greater than or equal to $c\n";
-}
-
-if ($b <= $c) {
+} else {
     echo "$b is less than or equal to $c\n";
 }
 
 if ($b == $c) {
     echo "$b is equal to $c\n";
-}
-
-if ($b === $c) {
+} elseif ($b === $c) {
     echo "$b is identical to $c\n";
-}
-
-if ($b != $c) {
+} elseif ($b != $c) {
     echo "$b is not equal to $c\n";
-}
-
-if ($b !== $c) {
+} else {
     echo "$b is not identical to $c\n";
 }
 
