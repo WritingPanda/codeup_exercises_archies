@@ -21,15 +21,15 @@ if (($z >= 0) || ($z < 10)) {
 }
 
 if (($x > 0) && ($x < 10)) {
-	echo "$x is greater than 0 and less than 10";
+	echo "$x is greater than 0 and less than 10\n";
 }
 
 if (($y > 0) && ($y < 10)) {
-	echo "$y is greater than 0 and less than 10";
+	echo "$y is greater than 0 and less than 10\n";
 }
 
 if (($z > 0) && ($z < 10)) {
-	echo "$z is greater than 0 and less than 10";
+	echo "$z is greater than 0 and less than 10\n";
 }
 
 //Here is a comment that you cannot see! Hooray for me!
