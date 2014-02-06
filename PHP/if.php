@@ -1,13 +1,13 @@
 <?php
 
-$a = 5;
+$a = 23;
 $b = 10;
-$c = '10';
+$c = '100';
 
 if ($a < $b) {
     echo "$a is less than $b\n";
 } else {
-	echo "$b is greater than $a\n";
+	echo "$b is less than $a\n";
 }
 
 
