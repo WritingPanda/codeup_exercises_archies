@@ -24,10 +24,11 @@ $guess = 0;
 	//The user hasn't guessed anything
 $number_of_guesses = 0;
 
+	//Begin program
 while ($guess != $number) {
 
 	$guess = fgets(STDIN);
-
+	//Checking if the guess is less than or greater than the random number
 	if ($guess < $number) {
 		fwrite(STDOUT, 'Higher! ');
 	} elseif ($guess > $number) {
@@ -35,9 +36,9 @@ while ($guess != $number) {
 	}
 	$number_of_guesses++;
 }
-
+	//Victory!
 fwrite(STDOUT, "Aww yeah! You guessed the number!\n ");
-
+	//Ultimate guesser message
 if ($number_of_guesses == 1) {
 	echo "Whoa! You just needed one try!\n";
 	} else {
