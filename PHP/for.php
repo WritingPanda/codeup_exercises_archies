@@ -1,26 +1,21 @@
 <?php
 
-$start = $argv[1];
-$end = $argv[2];
-$increment = $argv[3];
+//Starting out
+fwrite(STDOUT, "Welcome to my program. I wrote it. You didn't.\n");
+//Asking user for input
+echo "Select a number with which you'd like to begin counting: ";
+
+//Setting starting variable for user input, making sure it is an integer
+$start = intval(fgets(STDIN));
+
+//Setting ending variable for user input, making sure it is an integer
+fwrite(STDOUT, "Choose a higher number: ");
+$end = intval(fgets(STDIN));
+
+//Setting increment, making sure it is an integer
+fwrite(STDOUT, "Select an increment: ");
+$increment = intval(fgets(STDIN));
 
 
-if ($start > $end) {
-	echo 'Please make sure that the second number is lower than the first one.' . PHP_EOL;
-	exit(0);
-}
-
-if (is_null($argv[3])) {
-	$increment = 1;
-}
-
-if (!is_numeric($start) || !is_numeric($end) || !is_numeric($increment)) {
-	echo 'Please use numbers.' . PHP_EOL;
-	exit(0);
-} 
-
-for ($i = $start; $i <= $end; $i+=$increment) {
-	echo "$i\n";
-}
 
 ?>
