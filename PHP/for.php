@@ -7,7 +7,7 @@ fwrite(STDOUT, "Welcome to my program.\n");
 echo "Select a number with which you'd like to begin counting: ";
 
 //Setting starting variable for user input, forcing INT value
-$start = intval(fgets(STDIN));
+$start = (int)fgets(STDIN);
 
 //Checking if $start is an integer
 if (!is_numeric($start)) {
@@ -17,7 +17,7 @@ if (!is_numeric($start)) {
 
 //Setting ending variable for user input, forcing INT value
 fwrite(STDOUT, "Choose a higher number: ");
-$end = intval(fgets(STDIN));
+$end = (int)fgets(STDIN);
 
 //Checking if $end is an integer
 if (!is_numeric($end)) {
@@ -27,7 +27,7 @@ if (!is_numeric($end)) {
 
 //Setting increment, forcing INT value
 fwrite(STDOUT, "Select an increment: ");
-$increment = intval(fgets(STDIN));
+$increment = (int)fgets(STDIN);
 
 //Checking if $increment is an integer
 if (!is_numeric($increment)) {
