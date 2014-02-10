@@ -23,16 +23,17 @@ $books = array(
     )
 );
 
-foreach ($books as $title => $details) {
-    foreach ($details as $key => $value) {
-        if ($key == 'published') {
-            echo "{$title} was published in {$value}";
-        } elseif ($key == 'author') {
-            echo " and was written by {$value}.";
-        } elseif ($key == 'pages') {
-            echo " It has {$value} pages.\n";
-        }
-    }
 
-}
+    foreach ($books as $title => $details) {
+        foreach ($details as $key => $value) {
+         if ($key == 'published') {
+             echo "{$title} was published in {$value}";
+            } elseif ($key == 'author') {
+                echo " and was written by {$value}.";
+            } elseif ($key == 'pages') {
+             echo " It has {$value} pages.\n";
+            }
+        }
+
+    }
 ?>
