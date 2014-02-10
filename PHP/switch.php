@@ -1,13 +1,15 @@
 <?php
 
 // Set the default timezone
+// This code is going to work for whatever the day is currently
 date_default_timezone_set('America/Chicago');
 
 // Get Day of Week as number
 // 1 (for Monday) through 7 (for Sunday)
 $day_of_week = date('N');
 
-//$day_of_week = rand(1,7);
+// The rand() allows for a random day to be chosen and displayed
+// $day_of_week = rand(1,7);
 
 switch($day_of_week) {
     case 1:
@@ -19,15 +21,15 @@ switch($day_of_week) {
     	echo "Tuesday\n";
     	break;
     case 3:
-    	//Output Wednesday
+    	// Output Wednesday
     	echo "Wednesday\n";
     	break;
     case 4:
-    	//Output Thursday
+    	// Output Thursday
     	echo "Thursday\n";
     	break;
     case 5:
-    	//Output Friday
+    	// Output Friday
     	echo "Friday\n";
     	break;
     default:
