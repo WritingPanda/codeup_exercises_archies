@@ -23,9 +23,12 @@ $books = array(
     )
 );
 
-foreach ($books as $value) {
-	foreach ($value as $key => $detail) {
-		echo "$value was $key in $detail by $key. The book has $key pages. \n";
+foreach ($books as $title => $details) {
+	foreach ($details as $attribute => $reveal) {
+		echo $title . PHP_EOL;
+        echo $details . PHP_EOL;
+        echo $attribute . PHP_EOL;
+        echo $reveal . PHP_EOL;
 	}
 }
 ?>
