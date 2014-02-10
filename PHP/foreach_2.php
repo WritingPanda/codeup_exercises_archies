@@ -6,7 +6,7 @@ $books = array(
         'author' => 'J. R. R. Tolkien',
         'pages' => 310
     ),
-    'Game of Thrones' => array(
+    'A Game of Thrones' => array(
         'published' => 1996,
         'author' => 'George R. R. Martin',
         'pages' => 835
@@ -24,11 +24,15 @@ $books = array(
 );
 
 foreach ($books as $title => $details) {
-	foreach ($details as $attribute => $reveal) {
-		echo $title . PHP_EOL;
-        echo $details . PHP_EOL;
-        echo $attribute . PHP_EOL;
-        echo $reveal . PHP_EOL;
-	}
+    foreach ($details as $key => $value) {
+        if ($key == 'published') {
+            echo "{$title} was published in {$value}";
+        } elseif ($key == 'author') {
+            echo " and was written by {$value}.";
+        } elseif ($key == 'pages') {
+            echo " It has {$value} pages.\n";
+        }
+    }
+
 }
 ?>
