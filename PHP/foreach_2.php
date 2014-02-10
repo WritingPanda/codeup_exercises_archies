@@ -23,5 +23,9 @@ $books = array(
     )
 );
 
-
+foreach ($books as $value) {
+	foreach ($value as $key => $detail) {
+		echo "$value was $key in $detail by $key. The book has $key pages. \n";
+	}
+}
 ?>
