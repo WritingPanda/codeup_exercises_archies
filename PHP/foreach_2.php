@@ -41,9 +41,17 @@ foreach ($books as $title => $details) {
     foreach ($details as $key => $value) {
         if ($key == 'published') {
             if ($value > 1950) {
-                echo $title . PHP_EOL;
+                echo $title . PHP_EOL . PHP_EOL;
             }
         } 
     } 
 }
  
+
+foreach ($books as $title => $book) {
+    if ($book['published'] > 1950) {
+        echo "{$book['author']} wrote $title, and published it in {$book['published']}.\n The book has {$book['pages']} pages.\n\n";
+    }
+}
+
+?>
