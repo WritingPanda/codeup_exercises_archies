@@ -23,6 +23,8 @@ $books = array(
     )
 );
 
+//Sorting the books with the information pertaining to each book
+
 foreach ($books as $title => $details) {
     foreach ($details as $key => $value) {
         if ($key == 'published') {
@@ -35,6 +37,8 @@ foreach ($books as $title => $details) {
     }
 }
 
+//Solving for the last question in the exercise
+
 echo "Which books were published after 1950?\n\n";
 
 foreach ($books as $title => $details) {
@@ -46,7 +50,10 @@ foreach ($books as $title => $details) {
         } 
     } 
 }
- 
+
+echo "Trying the problem in a different way.\n\n";
+
+//Testing out a different way of solving the problem
 
 foreach ($books as $title => $book) {
     if ($book['published'] > 1950) {
