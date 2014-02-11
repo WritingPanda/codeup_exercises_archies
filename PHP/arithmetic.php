@@ -36,8 +36,8 @@ function multiply($a, $b) {
 	return $a * $b;
 }
 // Calling it
-	multiply(4, 50);
-	echo "\n";
+$product = multiply(4, 50);
+	echo "The product of 4 and 50 is {$product}.\n";
 
 // Establishing divide function
 function divide($a, $b) {
@@ -46,8 +46,8 @@ function divide($a, $b) {
 }
 
 // Calling it
-	divide(1000, 50);
-	echo "\n";
+$quotient = divide(1000, 50);
+	echo "The quotient of 1000 and 50 is {$quotient}.\n";
 
 // Establishing modulus function
 function modulus($a, $b) {
@@ -55,7 +55,7 @@ function modulus($a, $b) {
     return $a % $b;
 }
 // Calling it
-	modulus(336, 8);
-	echo "\n";
+$module = modulus(336, 8);
+	echo "The remainder of 336 and 8 is {$module}.\n";
 
 ?>
