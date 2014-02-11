@@ -36,6 +36,8 @@ echo "\n";
 function divide($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
     	echo $a / $b;
+    } elseif ($b == 0) {
+    	echo "ERROR: You cannot divide by 0.";
     } else {
     	echo "ERROR: Both arguments must be numbers.\n";
     }
