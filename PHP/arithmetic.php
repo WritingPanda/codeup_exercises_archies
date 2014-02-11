@@ -4,15 +4,15 @@
 function error($a, $b) {
 	if (!is_numeric($a) || !is_numeric($b)) {
 		echo "\nERROR: Both arguments {$a} and {$b} must be numbers.\n\n";
-	} elseif ($b === 0) {
         return false;
+        exit(0);
     } elseif (is_null($a) || is_null($b)) {
         return false;
         echo "ERROR: {$a} or {$b} has been left without a value.";
-    }   
-    var_dump($a);
-    var_dump($b);
-    exit(0);
+        exit(0);
+    } else {
+        return true;
+    }
 }
 // Establishing add function
 function add($a, $b) {
@@ -44,7 +44,13 @@ $product = multiply(4, 50);
 // Establishing divide function
 function divide($a, $b) {
     error($a, $b);
-    return $a / $b;
+    if ($b === 0) {
+        echo "ERROR: You cannot divide by 0.\t";
+        return false;
+        exit(0);
+    } else {
+        return $a / $b;
+    }
 }
 // Calling it
 $quotient = divide(1000, 50);
