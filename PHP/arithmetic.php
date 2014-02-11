@@ -1,10 +1,18 @@
 <?php
 
+function error() {
+	if ($b == 0) {
+		echo "ERROR: You cannot divide by 0.\n";
+	} else {
+		echo "ERROR: Both arguments ($a and $b) must be numbers.\n";
+	}
+}
+
 function add($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
     	echo $a + $b;
     } else {
-    	echo "ERROR: Both arguments must be numbers.\n";
+    	echo "ERROR: Both arguments ($a and $b) must be numbers.\n";
     }
 }
 
