@@ -9,7 +9,10 @@ function error($a, $b) {
     } elseif (is_null($a) || is_null($b)) {
         return false;
         echo "ERROR: {$a} or {$b} has been left without a value.";
-    }
+    }   
+    var_dump($a);
+    var_dump($b);
+    exit(0);
 }
 // Establishing add function
 function add($a, $b) {
