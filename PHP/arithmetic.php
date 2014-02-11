@@ -11,7 +11,6 @@ function error($a, $b) {
         echo "ERROR: {$a} or {$b} has been left without a value.";
     }
 }
-
 // Establishing add function
 function add($a, $b) {
     error($a, $b);
@@ -44,7 +43,6 @@ function divide($a, $b) {
     error($a, $b);
     return $a / $b;
 }
-
 // Calling it
 $quotient = divide(1000, 50);
 	echo "The quotient of 1000 and 50 is {$quotient}.\n";
@@ -57,5 +55,4 @@ function modulus($a, $b) {
 // Calling it
 $module = modulus(336, 8);
 	echo "The remainder of 336 and 8 is {$module}.\n";
-
 ?>
