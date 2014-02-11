@@ -15,7 +15,7 @@ function subtract($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
     	echo $a - $b;
     } else {
-    	echo "ERROR: Both arguments must be numbers.\n";
+    	echo "ERROR: Both arguments ($a and $b) must be numbers.\n";
     }
 }
 
@@ -26,7 +26,7 @@ function multiply($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
     	echo $a * $b;
     } else {
-    	echo "ERROR: Both arguments must be numbers.\n";
+    	echo "ERROR: Both arguments ($a and $b) must be numbers.\n";
     }
 }
 
@@ -39,7 +39,7 @@ function divide($a, $b) {
     } elseif ($b == 0) {
     	echo "ERROR: You cannot divide by 0.";
     } else {
-    	echo "ERROR: Both arguments must be numbers.\n";
+    	echo "ERROR: Both arguments ($a and $b) must be numbers.\n";
     }
 }
 
@@ -52,7 +52,7 @@ function modulus($a, $b) {
 	if (is_numeric($a) && is_numeric($b)) {
     	echo $a % $b;
     } else {
-    	echo "ERROR: Both arguments must be numbers.\n";
+    	echo "ERROR: Both arguments ($a and $b) must be numbers.\n";
     }
 }
 
