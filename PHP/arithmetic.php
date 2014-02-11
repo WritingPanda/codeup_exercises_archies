@@ -28,4 +28,13 @@ function divide($a, $b) {
 divide(1000, 50);
 echo "\n";
 
+// Modulus function
+
+function modulus($a, $b) {
+	echo $a % $b;
+}
+
+modulus(336, 8);
+echo "\n";
+
 ?>
