@@ -37,7 +37,7 @@ do {
 } while ($input != 'Q' && $input != 'q');
 
 // Say Goodbye!
-echo "Thank you! Goodbye! Don't be a jerk!\n";
+echo "Hold on to your butts... Goodbye!\n";
 
 // Exit with 0 errors
 exit(0);
