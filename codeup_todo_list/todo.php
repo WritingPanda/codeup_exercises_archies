@@ -34,11 +34,13 @@ function get_input($upper = FALSE) {
 }
 
 // Establishing the sorting function
-function sort_menu($arrayList) {
-    if (TRUE) {
-        sort($arrayList);
-    }
-}
+// function sort_menu($arrayList) {
+//     if (TRUE) {
+//         sort($arrayList);
+//     } else {
+//         rsort($arrayList);
+//     }
+// }
 
 // The loop!
 do {
@@ -46,7 +48,7 @@ do {
     echo list_items($items);
 
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (S)ort items, (Q)uit : ';
+    echo '(N)ew item, (R)emove item, (S)ort items, (Q)uit: ';
 
     // Get the input from user
     // Use trim() to remove whitespace and newlines
@@ -68,7 +70,16 @@ do {
     }
     // Adding sort input
     if ($input == 'S') {
-        // Sort function
+        echo '(A)-Z or (Z)-A?: ';
+        // Getting input
+        $sortOption = get_input(TRUE);
+        // Evaluating input 
+        if ($sortOption == 'A') {
+            // Sort function
+            sort($items);
+        } elseif ($sortOption == 'Z') {
+            rsort($items);
+        }
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');
