@@ -11,7 +11,7 @@ $array = array(1,2,3);
 function setEmpty($checkvar) {
 	if (isset($checkvar)) {
 		return true;
-	} elseif (empty($checkvar)) {
+	} elseif (!empty($checkvar)) {
 		return true;
 	} else {
 		return false;
@@ -29,9 +29,9 @@ if (setEmpty($nothing)) {
 // TEST: If var $nothing is empty, display '$nothing is EMPTY'
 
 if (setEmpty($nothing)) {
-	echo "\$nothing is EMPTY.\n";
-} else {
 	echo "\$nothing is not EMPTY.\n";
+} else {
+	echo "\$nothing is EMPTY.\n";
 }
 
 // TEST: If var $something is set, display '$something is SET'
