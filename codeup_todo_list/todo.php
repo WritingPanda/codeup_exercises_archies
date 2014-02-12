@@ -14,7 +14,9 @@ function list_items($list) {
     $place = '';
     // Iterate through list items
     foreach ($list as $key => $item) {
-        $place .= "[" . ++$key . "]" . " " . $item . PHP_EOL;
+        // The Ben B method: doing addition first and output second helps the brain split the process
+        $key++; //$key = $key + 1
+        $place .= "[" . $key . "]" . " " . $item . PHP_EOL;
     // Display each item and a newline
     }
     return $place;
@@ -44,12 +46,12 @@ do {
     $input = get_input(true);
 
     // Check for actionable input
-    if ($input == 'N' || $input == 'n') {
+    if ($input == 'N') {
         // Ask for entry
         echo 'Enter item: ';
         // Add entry to list array
         $items[] = get_input();
-    } elseif ($input == 'R' || $input == 'r') {
+    } elseif ($input == 'R') {
         // Remove which item?
         echo 'Enter item number to remove: ';
         // Get array key
@@ -58,7 +60,7 @@ do {
         unset($items[--$key]);
     }
 // Exit when input is (Q)uit
-} while ($input != 'Q' && $input != 'q');
+} while ($input != 'Q');
 
 // Say Goodbye!
 echo "Hold on to your butts... Goodbye!\n";
