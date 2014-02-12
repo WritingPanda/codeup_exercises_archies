@@ -33,13 +33,20 @@ function get_input($upper = FALSE) {
     }
 }
 
+// Establishing the sorting function
+function sort_menu($arrayList) {
+    if (TRUE) {
+        sort($arrayList);
+    }
+}
+
 // The loop!
 do {
     // Echo the list produced by the function
     echo list_items($items);
 
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (Q)uit : ';
+    echo '(N)ew item, (R)emove item, (S)ort items, (Q)uit : ';
 
     // Get the input from user
     // Use trim() to remove whitespace and newlines
@@ -58,6 +65,10 @@ do {
         $key = get_input();
         // Remove from array
         unset($items[--$key]);
+    }
+    // Adding sort input
+    if ($input == 'S') {
+        // Sort function
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');
