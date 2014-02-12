@@ -10,23 +10,37 @@ $array = array(1,2,3);
 
 function setEmpty($checkvar) {
 	if (isset($checkvar)) {
-		echo "\$checkvar is SET.";
+		return true;
 	} elseif (empty($checkvar)) {
-		echo "\$checkvar is EMPTY.";
+		return true;
+	} else {
+		return false;
 	}
 }
 
 // TEST: If var $nothing is set, display '$nothing is SET'
 
-setEmpty($nothing);
+if (setEmpty($nothing)) {
+	echo "\$nothing is SET.\n";
+} else {
+	echo "\$nothing is not SET.\n";
+}
 
 // TEST: If var $nothing is empty, display '$nothing is EMPTY'
 
-setEmpty($nothing);
+if (setEmpty($nothing)) {
+	echo "\$nothing is EMPTY.\n";
+} else {
+	echo "\$nothing is not EMPTY.\n";
+}
 
 // TEST: If var $something is set, display '$something is SET'
 
-setEmpty($something);
+if (setEmpty($something)) {
+	echo "\$something is SET.\n";
+} else {
+	echo "\$something is not SET.\n";
+}
 
 // Serialize the array $array, and output the results
 
@@ -34,5 +48,8 @@ $serial = serialize($array);
 var_dump($serial);
 
 // Unserialize the array $array, and output the results
+
+$unserial = unserialize($serial);
+var_dump($unserial);
 
 ?>
