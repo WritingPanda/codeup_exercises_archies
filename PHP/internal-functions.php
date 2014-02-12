@@ -10,21 +10,28 @@ $array = array(1,2,3);
 
 function setEmpty($checkvar) {
 	if (isset($checkvar)) {
-		echo "\$variable_name is SET.";
+		echo "\$checkvar is SET.";
 	} elseif (empty($checkvar)) {
-		echo "\$variable_name is EMPTY.";
+		echo "\$checkvar is EMPTY.";
 	}
 }
 
 // TEST: If var $nothing is set, display '$nothing is SET'
 
-isEmpty($nothing);
+setEmpty($nothing);
 
 // TEST: If var $nothing is empty, display '$nothing is EMPTY'
 
+setEmpty($nothing);
+
 // TEST: If var $something is set, display '$something is SET'
 
+setEmpty($something);
+
 // Serialize the array $array, and output the results
+
+$serial = serialize($array);
+var_dump($serial);
 
 // Unserialize the array $array, and output the results
 
