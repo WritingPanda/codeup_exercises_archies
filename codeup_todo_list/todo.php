@@ -32,15 +32,6 @@ function get_input($upper = false) {
     }
 }
 
-// Establishing the sorting function
-// function sort_menu($arrayList) {
-//     if (TRUE) {
-//         sort($arrayList);
-//     } else {
-//         rsort($arrayList);
-//     }
-// }
-
 // The loop!
 do {
     // Echo the list produced by the function
@@ -58,7 +49,16 @@ do {
         // Ask for entry
         echo 'Enter item: ';
         // Add entry to list array
-        $items[] = get_input();
+        $newItem = get_input();
+            echo 'Would you like that at the (B)eginning or the (E)nd? ';
+            $input = get_input(TRUE);
+            if ($input == 'B') {
+                array_unshift($items, $newItem);
+            } elseif ($input == 'E') {
+                array_push($items, $newItem);
+            } else {
+                return true;
+            }
     } elseif ($input == 'R') {
         // Remove which item?
         echo 'Enter item number to remove: ';
@@ -79,6 +79,10 @@ do {
         } elseif ($sortOption == 'Z') {
             rsort($items);
         }
+    } elseif ($input == 'F') {
+        array_shift($items);
+    } elseif ($input == 'L') {
+        array_pop($items);
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');
