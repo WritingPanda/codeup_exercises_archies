@@ -3,13 +3,6 @@
 // Create array to hold list of todo items
 $items = array();
 
-// List array items formatted for CLI
-    // Return string of list items separated by newlines.
-    // Should be listed [KEY] Value like this:
-    // [1] TODO item 1
-    // [2] TODO item 2 - blah
-    // DO NOT USE ECHO, USE RETURN
-
 function list_items($list) {
     $place = '';
     // Iterate through list items
@@ -32,7 +25,6 @@ function get_input($upper = false) {
     }
 }
 
-// The loop!
 do {
     // Echo the list produced by the function
     echo list_items($items);
@@ -41,7 +33,6 @@ do {
     echo '(N)ew item, (R)emove item, (S)ort items, (Q)uit: ';
 
     // Get the input from user
-    // Use trim() to remove whitespace and newlines
     $input = get_input(true);
 
     // Check for actionable input
@@ -92,5 +83,4 @@ echo "Hold on to your butts... Goodbye!\n";
 
 // Exit with 0 errors
 exit(0);
-
 ?>
