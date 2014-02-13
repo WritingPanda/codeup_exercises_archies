@@ -65,7 +65,7 @@ do {
         // Get array key
         $key = get_input();
         // Remove from array
-        unset($items[$key]);
+        unset($items[--$key]);
         // Adding sort input
     } elseif ($input == 'S') {
         // Alphabetical or Reverse alphabet?
