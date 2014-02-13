@@ -14,9 +14,8 @@ function list_items($list) {
     $place = '';
     // Iterate through list items
     foreach ($list as $key => $item) {
-        // The Ben B method: doing addition first and output second helps the brain split the process
-        $key++; //$key = $key + 1
-        $place .= "[" . $key . "]" . " " . $item . PHP_EOL;
+        $newKey = $key + 1;
+        $place .= "[" . $newKey . "]" . " " . $item . PHP_EOL;
     // Display each item and a newline
     }
     return $place;
@@ -24,7 +23,7 @@ function list_items($list) {
 
 // Get STDIN, strip whitespace and newlines, 
 // and convert to uppercase if $upper is true
-function get_input($upper = FALSE) {
+function get_input($upper = false) {
     // Return filtered STDIN input
     if($upper == TRUE) {
         return strtoupper(trim(fgets(STDIN)));
@@ -66,7 +65,7 @@ do {
         // Get array key
         $key = get_input();
         // Remove from array
-        unset($items[--$key]);
+        unset($items[$key]);
         // Adding sort input
     } elseif ($input == 'S') {
         // Alphabetical or Reverse alphabet?
