@@ -3,6 +3,7 @@
 // Converts array into list n1, n2, ..., and n3
 function humanized_list($input) { 
 	$array = explode(', ', $input);
+	$sortArray = sort($array);
 	$lastItem = array_pop($array);
 	$newArray = implode(", ", $array) . ", and " . $lastItem;
 	return $newArray;
