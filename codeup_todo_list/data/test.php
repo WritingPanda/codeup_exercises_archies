@@ -19,12 +19,12 @@
 // }
 // fclose($handle);
 
-$new_tasks = ['Wash the car', 'Play the drums', 'Write some blogs', 'Manage social media', 'Profit'];
+// $new_tasks = ['Wash the car', 'Play the drums', 'Write some blogs', 'Manage social media', 'Profit'];
 
-$filename = "todo_list.txt";
-$handle = fopen($filename, 'a');
-foreach ($new_tasks as $task) {
-    fwrite($handle, PHP_EOL . $task);
-}
-fclose($handle);
+// $filename = trim(fgets(STDIN));
+// $handle = fopen($filename, "w");
+// foreach ($new_tasks as $task) {
+//     fwrite($handle, $task . PHP_EOL);
+// }
+// fclose($handle);
 ?>

@@ -38,10 +38,11 @@ function read_file($fileRead, $itemlist) {
 
 function save_file($arrayname){
     echo "Enter filename: ";
+    
     $filename = get_input();
     $handle = fopen($filename, "w");
     foreach ($arrayname as $task) {
-        fwrite($handle, PHP_EOL . $task);
+        fwrite($handle, $task . PHP_EOL);
     } fclose($handle);
 }
 
@@ -102,12 +103,22 @@ do {
 
     } elseif ($input == 'M') {
         echo "(O)pen or (S)ave file? ";
-        $filename = get_input(TRUE);
-            if($input == 'S'){
-                save_file($items);
-                echo "File saved. ";
+        $input = get_input(TRUE);
+                if($input == 'S'){
+                    echo "Doing this will overwrite your file. Is that okay? Y or N? ";
+                    $input = get_input(TRUE);
+                    if ($input == 'Y') {
+                        save_file($items);
+                        echo "File saved. " . PHP_EOL;
+                    } elseif ($input == 'N') {
+                        echo "Returning to menu." . PHP_EOL;
+                        continue;
+                    }
+                    
             } elseif($input == 'O') {
-                $items = read_file($filename, $items);
+                    echo "Enter filename: ";
+                    $filename = get_input();
+                    $items = read_file($filename, $items);
             }
     }
 // Exit when input is (Q)uit
