@@ -33,6 +33,16 @@ function read_file($fileRead, $itemlist) {
         array_push($itemlist, $value);
     }
     return $itemlist;
+    fclose($handle);
+}
+
+function save_file($arrayname){
+    echo "Enter filename: ";
+    $filename = get_input();
+    $handle = fopen($filename, "w");
+    foreach ($arrayname as $task) {
+        fwrite($handle, PHP_EOL . $task);
+    } fclose($handle);
 }
 
 do {
@@ -40,7 +50,7 @@ do {
     echo list_items($items);
 
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (S)ort items, (O)pen file, (Q)uit: ';
+    echo '(N)ew item, (R)emove item, (S)ort items, File (M)anager, (Q)uit: ';
 
     // Get the input from user
     $input = get_input(true);
@@ -58,7 +68,7 @@ do {
             } elseif ($input == 'E') {
                 array_push($items, $newItem);
             } else {
-                return true;
+                array_push($items, $newItem);
             }
     
     } elseif ($input == 'R') {
@@ -90,19 +100,15 @@ do {
     } elseif ($input == 'L') {
         array_pop($items);
 
-    } elseif ($input == 'O') {
-        echo "Enter file name: ";
-        $filename = get_input();
-
+    } elseif ($input == 'M') {
         echo "(O)pen or (S)ave file? ";
-        
-        $input = get_input(TRUE);
-
-        if($input == 'S'){
-            echo "File saved. ";
-        } elseif($input == 'O') {
-            $items = read_file($filename, $items);
-        }
+        $filename = get_input(TRUE);
+            if($input == 'S'){
+                save_file($items);
+                echo "File saved. ";
+            } elseif($input == 'O') {
+                $items = read_file($filename, $items);
+            }
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');

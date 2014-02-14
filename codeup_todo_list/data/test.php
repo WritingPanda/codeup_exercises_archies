@@ -10,12 +10,21 @@
 // fclose($handle);
 
 
-$new_cities = ['Changhua County, Taiwan', 'Hamina, Finland', 'St Ghislain, Belgium', 'Dublin, Ireland'];
+// $new_cities = ['Changhua County, Taiwan', 'Hamina, Finland', 'St Ghislain, Belgium', 'Dublin, Ireland'];
+
+// $filename = "todo_list.txt";
+// $handle = fopen($filename, 'a');
+// foreach ($new_cities as $city) {
+//     fwrite($handle, PHP_EOL . $city);
+// }
+// fclose($handle);
+
+$new_tasks = ['Wash the car', 'Play the drums', 'Write some blogs', 'Manage social media', 'Profit'];
 
 $filename = "todo_list.txt";
 $handle = fopen($filename, 'a');
-foreach ($new_cities as $city) {
-    fwrite($handle, PHP_EOL . $city);
+foreach ($new_tasks as $task) {
+    fwrite($handle, PHP_EOL . $task);
 }
 fclose($handle);
 ?>
