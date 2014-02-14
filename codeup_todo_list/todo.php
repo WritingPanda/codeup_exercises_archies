@@ -25,12 +25,21 @@ function get_input($upper = false) {
     }
 }
 
+function read_file($fileRead, $itemlist) {
+    $handle = fopen($fileRead, "r");
+    $contents = fread($handle, filesize($fileRead));
+    $contents_array = explode("\n", $contents);
+        foreach ($contents_array as $value) {
+            array_push($itemlist, $value);
+    }
+}
+
 do {
     // Echo the list produced by the function
     echo list_items($items);
 
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (S)ort items, (Q)uit: ';
+    echo '(N)ew item, (R)emove item, (S)ort items, (O)pen file, (Q)uit: ';
 
     // Get the input from user
     $input = get_input(true);
@@ -74,6 +83,10 @@ do {
         array_shift($items);
     } elseif ($input == 'L') {
         array_pop($items);
+    } elseif ($input == 'O') {
+        echo "Enter file name: ";
+        $filename = get_input();
+        read_file($filename, $items);
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');
