@@ -29,9 +29,10 @@ function read_file($fileRead, $itemlist) {
     $handle = fopen($fileRead, "r");
     $contents = fread($handle, filesize($fileRead));
     $contents_array = explode("\n", $contents);
-        foreach ($contents_array as $value) {
-            array_push($itemlist, $value);
+    foreach ($contents_array as $value) {
+        array_push($itemlist, $value);
     }
+    return $itemlist;
 }
 
 do {
@@ -59,6 +60,7 @@ do {
             } else {
                 return true;
             }
+    
     } elseif ($input == 'R') {
         // Remove which item?
         echo 'Enter item number to remove: ';
@@ -67,6 +69,7 @@ do {
         // Remove from array
         unset($items[--$key]);
         // Adding sort input
+    
     } elseif ($input == 'S') {
         // Alphabetical or Reverse alphabet?
         echo '(A)-Z or (Z)-A?: ';
@@ -76,17 +79,30 @@ do {
         if ($sortOption == 'A') {
             // Sort function
             sort($items);
+        
         } elseif ($sortOption == 'Z') {
             rsort($items);
         }
+
     } elseif ($input == 'F') {
         array_shift($items);
+
     } elseif ($input == 'L') {
         array_pop($items);
+
     } elseif ($input == 'O') {
         echo "Enter file name: ";
         $filename = get_input();
-        read_file($filename, $items);
+
+        echo "(O)pen or (S)ave file? ";
+        
+        $input = get_input(TRUE);
+
+        if($input == 'S'){
+            echo "File saved. ";
+        } elseif($input == 'O') {
+            $items = read_file($filename, $items);
+        }
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');
