@@ -38,9 +38,17 @@ function read_file($fileRead, $itemlist) {
 
 function save_file($arrayname){
     echo "Enter filename: ";
-    
     $filename = get_input();
-    $handle = fopen($filename, "w");
+    if (file_exists($filename)) {
+        echo "This will overwrite the file. Are you sure? Y or N? ";
+        $input = get_input(TRUE);
+        if ($input == 'Y') {
+            continue;
+        } elseif ($input == 'N') {
+            break;
+        }
+    }
+    $handle = fopen($filename, 'w');
     foreach ($arrayname as $task) {
         fwrite($handle, $task . PHP_EOL);
     } fclose($handle);
