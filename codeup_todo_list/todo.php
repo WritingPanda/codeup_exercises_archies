@@ -25,33 +25,32 @@ function get_input($upper = false) {
     }
 }
 
-function read_file($fileRead, $itemlist) {
-    $handle = fopen($fileRead, "r");
-    $contents = fread($handle, filesize($fileRead));
+function read_file($filename) {
+    $handle = fopen($filename, "r");
+    $contents = fread($handle, filesize($filename));
     $contents_array = explode("\n", $contents);
-    foreach ($contents_array as $value) {
-        array_push($itemlist, $value);
-    }
-    return $itemlist;
     fclose($handle);
+    return $contents_array;
 }
 
-function save_file($arrayname){
-    echo "Enter filename: ";
-    $filename = get_input();
+function save_file($filename, $data_to_save){
+
+    $input = 'Y';
+
     if (file_exists($filename)) {
         echo "This will overwrite the file. Are you sure? Y or N? ";
         $input = get_input(TRUE);
-        if ($input == 'Y') {
-            continue;
-        } elseif ($input == 'N') {
-            break;
-        }
     }
-    $handle = fopen($filename, 'w');
-    foreach ($arrayname as $task) {
-        fwrite($handle, $task . PHP_EOL);
-    } fclose($handle);
+
+    if ($input == 'Y') {
+        $handle = fopen($filename, 'w');
+        $contents = implode("\n", $data_to_save);
+        fwrite($handle, $contents);
+        fclose($handle);
+    } else {
+        echo "No changes were made.\n";
+    }
+
 }
 
 do {
@@ -110,24 +109,21 @@ do {
         array_pop($items);
 
     } elseif ($input == 'M') {
+
         echo "(O)pen or (S)ave file? ";
         $input = get_input(TRUE);
-                if($input == 'S'){
-                    echo "Doing this will overwrite your file. Is that okay? Y or N? ";
-                    $input = get_input(TRUE);
-                    if ($input == 'Y') {
-                        save_file($items);
-                        echo "File saved. " . PHP_EOL;
-                    } elseif ($input == 'N') {
-                        echo "Returning to menu." . PHP_EOL;
-                        continue;
-                    }
-                    
-            } elseif($input == 'O') {
-                    echo "Enter filename: ";
-                    $filename = get_input();
-                    $items = read_file($filename, $items);
-            }
+
+        echo "Enter filename: ";
+        $filename = get_input();
+
+        if($input == 'S'){
+            save_file($filename, $items);
+            echo "\nSaving file...\n\n";
+        } elseif($input == 'O') {
+            $new_items = read_file($filename, $items);
+            $items = array_merge($items, $new_items);
+            echo "\nMerging...\n\n";
+        }
     }
 // Exit when input is (Q)uit
 } while ($input != 'Q');
