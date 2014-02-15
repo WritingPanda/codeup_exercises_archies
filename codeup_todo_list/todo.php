@@ -120,7 +120,7 @@ do {
             save_file($filename, $items);
             echo "\nSaving file...\n\n";
         } elseif($input == 'O') {
-            $new_items = read_file($filename, $items);
+            $new_items = read_file($filename);
             $items = array_merge($items, $new_items);
             echo "\nMerging...\n\n";
         }
