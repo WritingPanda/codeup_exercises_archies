@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Switch Statement</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+		var color = colors[Math.floor(Math.random()*colors.length)];
+
+		switch (color) {
+			case 'red':
+				console.log('The Red Sea.');
+				break;
+			case 'orange':
+				console.log('Nothing rhymes with orange except for orange.');
+				break;
+			case 'yellow':
+				console.log('Look at the stars / Look how they shine for you. -Yellow.');
+				break;
+			case 'green':
+				console.log('Mean, green, fighting machine.');
+				break;
+			case 'blue':
+				console.log('Zhang Ziyi played a Japanese girl with blue eyes in Memoirs of a Geisha.');
+				break;
+			default:
+				console.log('Seriously, is the Gamecube violet or indigo?');
+}
+	</script>
+</body>
+</html>

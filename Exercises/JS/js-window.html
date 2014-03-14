@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="/css/site.css">
+	<title>JavaScript DOM and BOM</title>
+</head>
+<body>
+	<h2>Autosaving Text Input</h2>
+	<textarea rows="10" cols="60" id="important"></textarea>
+    <script>
+	    var delay = 5000;
+	    var timeoutID;
+
+	    function save() {
+	    	alert('Saved!');
+	    }
+
+	    function autosave() {
+	    	console.log("Autosaved called.");
+	    	clearTimeout(timeoutID);
+	    	timeoutID = setTimeout(save, delay);
+	    };
+
+	    var textarea = document.getElementById('important');
+	    textarea.addEventListener('keyup', autosave, false);
+    </script>
+</body>
+</html>

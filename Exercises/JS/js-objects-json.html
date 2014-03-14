@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Coda+Caption:800|Bubbler+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/resources/todoaddressbkstyle.css" type='text/css'>
+	<meta charset="UTF-8">
+	<title>JSON Exercise</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// todo:
+		// Create an array of object that represent books.
+		// Each book should have a title and an author.
+		// The book author should be an object with a firstName and lastName.
+		// Be creative and add at least 5 books to the array
+		// var books = [todo];
+
+		var books = [
+			{
+				'title': 'A Clash of Pandas',
+				'author': {
+					'firstName': 'George R.R.',
+					'lastName': 'Bamboo'
+				}
+			},
+			{
+				'title': 'A Panda in the Rye', 
+				'author': {
+					'firstName': 'J.D.',
+					'lastName': 'White'
+				}
+			},
+			{
+				'title': 'Ender\'s Panda', 
+				'author': {
+					'firstName': 'Orson Scott',
+					'lastName': 'Black'
+				}			
+			},
+			{
+				'title': 'To Kill a Panda', 
+				'author': {
+					'firstName': 'Harper',
+					'lastName': 'Giant'
+				}
+			},
+			{
+				'title': 'Eats Shoots and Leaves', 
+				'author': {
+					'firstName': 'Lynne',
+					'lastName': 'Truss'
+				}
+			}
+		]
+
+		// log out the books array
+		console.log(books);
+
+		// todo:
+		// Loop through the array of books using .forEach and print out the specified information about each one.
+		// start loop here
+		books.forEach(function (element, index, array) {
+		    console.log("Book #" + (index + 1));
+		    console.log("Title: " + element.title);
+		    console.log("Author: " + element.author.firstName + ' ' + element.author.lastName);
+		    console.log("---");
+		});
+		// end loop here
+	</script>
+</body>
+</html>

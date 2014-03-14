@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays Introduction</title>
+</head>
+<body>
+	<h3>An intro to the magic of arrays in JS.</h3>
+	<script type="text/javascript">
+
+		// todo:
+		// Create an array of 4 names using literal array notation, in a variable called 'names'.
+		var names = ['Muigi', 'Diego', 'Mateo', 'Sami'];
+		// todo:
+		// Create a log statement that will log the number of elements in the names array.
+		console.log(names.length);
+		// todo:
+		// Create log statements that will print each of the names array elements individually.
+		for (var i = 0; i < names.length; i++) {
+			console.log('I have a dog named ' + names[i] + '.');
+		};
+
+		names.forEach(function(element, index, array) {
+			console.log('I have a dog named ' + element + ' with an index of ' + index + '.');
+		});
+	</script>
+</body>
+</html>

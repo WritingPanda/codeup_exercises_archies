@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Break Continue</title>
+</head>
+<body>
+	<h3>Oh, break and continue? How nice!
+		<br>You know how to get in the console.
+		<br>Becky loves you, by the way. You're doing this for her.</h3>
+	<script type="text/javascript">
+		
+		var random = Math.floor((Math.random()*50)+1);
+		var i = 0;
+		
+		// for (; i < 50; i++) {
+		// 	if (i % 2 == 0) {
+		// 		continue;
+		// 	} else if (i == random) {
+		// 		console.log("George Takei says \"Oh myyyy!\" " + i);
+		// 		continue;
+		// 	}
+		// 	console.log("Odd number: " + i);
+		// }
+
+		for (; i < 50; i++) {
+			do {
+				console.log("Odd number: " + i);
+				i++;
+				if (i % 2 == 0) {
+					break;	
+				} else if (i == random) {
+					console.log("Skip it! " + i);
+				}
+			} while (i % 2 != 0);
+		}
+	</script>
+</body>
+</html>

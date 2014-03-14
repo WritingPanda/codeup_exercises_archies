@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array Split/Join in JS</title>
+</head>
+<body>
+	<p>Arrays goin' split and join in JS</p>
+	<script type="text/javascript">
+
+		var planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+
+		// todo: Join the planets array with pipes (|) to create a variable named 'planetsAsString'.
+		var planetsAsString = planets.join(' | ');
+		console.log(planetsAsString);
+
+		// todo: Split the 'planetsAsString' variable by pipes (|) to create a variable named 'planetsAsArray'.
+		var planetsAsArray = planetsAsString.split(' | ');
+		console.log(planetsAsArray);
+
+	</script>
+</body>
+</html>

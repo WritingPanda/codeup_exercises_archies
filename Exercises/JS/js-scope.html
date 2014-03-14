@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scope in JavaScript</title>
+</head>
+<body>
+	<center><p>Scopin' out JavaScript.</p></center>
+
+	<script type="text/javascript">
+
+		// Refactor the code using an IFFE so that there are not variables or function in the global scope.
+
+		(function () {
+			var myNameIs = 'Omar';
+			console.log('Hello, ' + myNameIs + '. How are you doing today?');
+		}());
+		
+		var random = Math.floor((Math.random()*100)+1);
+
+		(function () {
+			var random = Math.floor((Math.random()*100)+1);
+			if (random % 2 !== 0) {
+				console.log(random + ' is odd.');
+				return true;
+			} else {
+				console.log(random + ' is even.');
+				return false;
+			}
+		}());
+
+		(function () {
+			alert('Oh yeah!');
+			console.log('Kool-Aid man!');
+		}());
+
+	</script>
+</body>
+</html>

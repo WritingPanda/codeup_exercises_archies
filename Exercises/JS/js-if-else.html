@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>If Else JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// ignore these lines for now
+		// just know that the variable 'color' will end up with a random value from the colors array
+		var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+		var color = colors[Math.floor(Math.random()*colors.length)];
+
+		var favorite;
+
+		if (color == 'blue') {
+			console.log("Blue is my favorite color: the color of water and the sky.");
+		} else if (color == 'red') {
+			console.log('Melisandre, the red woman.');
+		} else if (color == 'orange') {
+			console.log('Citrus. Delicious citrus. And that guy from Denmark: orange.');
+		} else if (color == 'yellow') {
+			console.log('I am not really sure if they ever say yellow in that Coldplay song.');
+		} else if (color == 'green') {
+			console.log('Sir Gawain the Green Knight.');
+		} else {
+			console.log('Is the Nintendo Gamecube indigo or violet?');
+		};
+
+		var favorite = (color == 'blue') ? "\nBlue is also the color of my water bottle." : "\nI'm not down with " + color + ".";
+
+		console.log(favorite);
+	</script>
+</body>
+</html>

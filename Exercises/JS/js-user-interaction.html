@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User Interactions</title>
+</head>
+<body>
+	<p>Working with user interactions.</p>
+	<h3>Hi everybody!</h3>
+	<script type="text/javascript">
+ 
+ 	// todo: Ask the user for their name.
+	// 	Keep asking if an empty input is provided.
+	do {
+		var username = prompt('What is your name, yo?');
+	} while (username === '' || username == null || username == 'null');
+
+	// todo: Show an alert message that welcomes the user based on their input.
+	alert("Welcome to my website, " + username + "!");
+	// todo: Ask the user if they like pizza.
+	//       Based on their answer tell show a creative alert message.
+	var pizza = prompt('Do you like pizza? Yes or No?');
+
+	if (pizza == 'yes' || pizza == 'Yes' || pizza == 'y' || pizza == 'Y' || pizza == 'Oh yeah!') {
+		alert('That\'s a bad choice. You need to cut back on that \'za!');
+	} else if (pizza == 'no') {
+		alert('Have a salad!');
+	} else {
+		alert('You did not put yes or no. No pizza for you. Panda angry.');
+	}
+	</script>
+</body>
+</html>
